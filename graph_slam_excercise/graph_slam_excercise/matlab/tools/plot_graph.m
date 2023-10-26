@@ -1,5 +1,5 @@
 % plot a 2D SLAM graph
-function plot_graph(g, iteration)
+function plot_graph(g, iteration, set)
 
 clf;
 hold on;
@@ -58,7 +58,7 @@ figure(1);
 drawnow;
 %pause(0.1);
 if (iteration >= 0)
-  filename = sprintf('../plots/lsslam_%03d.png', iteration);
+  filename = sprintf('../plots/lsSLAM_%01d_%02d.png', set, iteration);
   print(filename, '-dpng');
 end
 
