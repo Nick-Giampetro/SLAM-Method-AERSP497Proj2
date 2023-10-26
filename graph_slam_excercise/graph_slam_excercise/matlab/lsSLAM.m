@@ -7,12 +7,10 @@ addpath('tools');
 % load the graph into the variable g
 % only leave one line uncommented
 
-% simulation datasets
-%load ../data/simulation-pose-pose.mat
-%load ../data/simulation-pose-landmark.mat
 
-% real-world datasets
 for set = 1:4 
+
+    % data sets (both real and simulated)
     if (set == 1)
         load ../data/simulation-pose-pose.mat
     elseif (set == 2)
