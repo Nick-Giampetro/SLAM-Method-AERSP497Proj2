@@ -1,3 +1,4 @@
+clc
 more off;
 clear all;
 close all;
@@ -6,7 +7,6 @@ addpath('tools');
 
 % load the graph into the variable g
 % only leave one line uncommented
-
 
 for set = 1:4 
 
@@ -28,7 +28,8 @@ for set = 1:4
     EPSILON = 10^-4;
     
     % Error
-    err = 0;
+    err = compute_global_error(g);
+    allErr(i,set) = err ;
     
     % plot the initial state of the graph
     plot_graph(g, 0, set);
@@ -53,7 +54,8 @@ for set = 1:4
     
       % Compute the global error given the current graph configuration
       err = compute_global_error(g);
-    
+      allErr(i+1,set) = err ;
+
       % Print current error
       fprintf('Current error %f\n', err);
     

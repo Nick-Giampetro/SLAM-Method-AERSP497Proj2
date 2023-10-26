@@ -16,6 +16,9 @@ for eid = 1:length(g.edges)
     info12  = edge.information;             % the information matrix corresponding to the measurement 
 
     % (TODO) compute the error of the constraint and add it to Fx.
+    
+    PH = pinv(z12)*(pinv(x1)*x2) 
+    Fx = t2v(PH) ;
 
   % pose-landmark constraint
   elseif (strcmp(edge.type, 'L') ~= 0)
@@ -25,8 +28,8 @@ for eid = 1:length(g.edges)
     info  = edge.information;              % the information matrix corresponding to the measurement 
 
     % (TODO) compute the error of the constraint and add it to Fx.
-
-
+    
+    Fx = pinv(x)*l - z ;
 
   end
 end
