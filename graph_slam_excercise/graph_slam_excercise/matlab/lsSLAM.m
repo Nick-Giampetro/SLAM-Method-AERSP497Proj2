@@ -29,7 +29,7 @@ for set = 1:4
     
     % Error
     err = compute_global_error(g);
-    allErr(i,set) = err ;
+    %allErr(i,set) = err ;
     
     % plot the initial state of the graph
     plot_graph(g, 0, set);

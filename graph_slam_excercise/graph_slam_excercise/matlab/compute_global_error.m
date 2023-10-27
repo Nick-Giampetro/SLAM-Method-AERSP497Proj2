@@ -17,8 +17,9 @@ for eid = 1:length(g.edges)
 
     % (TODO) compute the error of the constraint and add it to Fx.
     
-    PH = pinv(z12)*(pinv(x1)*x2) 
-    Fx = t2v(PH) ;
+     PH = pinv(v2t(x1)) * v2t(x2);
+    e = t2v(pinv(v2t(z12)) * PH);
+    Fx = Fx + (e' * info12 * e);
 
   % pose-landmark constraint
   elseif (strcmp(edge.type, 'L') ~= 0)
