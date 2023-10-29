@@ -73,25 +73,25 @@ end
 
 f = figure ;
 subplot(2,2,1)
-plot(allErr(:,1))
+plot(1:10 , allErr([1:10],1))
 title('simulation-pose-pose')
 xlabel('Iteration')
 ylabel('Error')
 
 subplot(2,2,2)
-plot(allErr(:,2))
+plot(1:6 , allErr([1:6],2))
 title('intel')
 xlabel('Iteration')
 ylabel('Error')
 
 subplot(2,2,3)
-plot(allErr(:,3))
+plot(1:5 , allErr([1:5],3))
 title('simulation-pose-landmark')
 xlabel('Iteration')
 ylabel('Error')
 
 subplot(2,2,4)
-plot(allErr(:,4))
+plot(1:11 , allErr([1:11],4))
 title('dlr')
 xlabel('Iteration')
 ylabel('Error')
