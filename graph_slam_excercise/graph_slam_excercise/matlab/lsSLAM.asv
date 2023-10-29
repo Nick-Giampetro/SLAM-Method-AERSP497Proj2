@@ -69,31 +69,11 @@ for set = 1:4
     
     fprintf('Done!\nFinal error %f\n', err);
 
+    f = figure ;
+    subplot(1,1,1)
+    plot(length(allErr(:,1)),allErr())
+    xlabel('Iteration')
+    ylabel('Error')
+    exportgraphics(f,['Errors' '.jpg'])
+
 end
-
-f = figure ;
-subplot(2,2,1)
-plot(allErr(:,1))
-title('simulation-pose-pose')
-xlabel('Iteration')
-ylabel('Error')
-
-subplot(2,2,2)
-plot(allErr(:,2))
-title('intel')
-xlabel('Iteration')
-ylabel('Error')
-
-subplot(2,2,3)
-plot(allErr(:,3))
-title('simulation-pose-landmark')
-xlabel('Iteration')
-ylabel('Error')
-
-subplot(2,2,4)
-plot(allErr(:,4))
-title('dlr')
-xlabel('Iteration')
-ylabel('Error')
-
-exportgraphics(f,['../plots/errors' '.jpg'])
