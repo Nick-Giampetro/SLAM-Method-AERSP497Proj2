@@ -17,7 +17,7 @@ for eid = 1:length(g.edges)
 
     % (TODO) compute the error of the constraint and add it to Fx.
     
-     PH = pinv(v2t(x1)) * v2t(x2);
+    PH = pinv(v2t(x1)) * v2t(x2);
     e = t2v(pinv(v2t(z12)) * PH);
     Fx = Fx + (e' * info12 * e);
 
@@ -30,7 +30,10 @@ for eid = 1:length(g.edges)
 
     % (TODO) compute the error of the constraint and add it to Fx.
     
-    Fx = pinv(x)*l - z ;
+    R = [ cos(x(3)) -sin(x(3)) ;  sin(x(3)) cos(x(3)) ] ;
+    t = [x(1) x(2)]' ;
+    e = R'*(l-t) - z ;
+    Fx = Fx + (e' * info * e) ;
 
   end
 end
